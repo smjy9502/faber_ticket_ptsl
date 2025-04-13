@@ -106,7 +106,7 @@ class _PhotoScreenState extends State<PhotoScreen> {
               icon: Icon(Icons.arrow_back, color: Colors.white),
               onPressed: () => Navigator.pushReplacement(
                 context,
-                MaterialPageRoute(builder: (context) => CustomScreen()),
+                MaterialPageRoute(builder: (context) => MainScreen()),
               ),
             ),
           ),

@@ -1,10 +1,10 @@
 import 'package:faber_ticket_ptsl/screens/main_screen.dart';
+import 'package:faber_ticket_ptsl/screens/photo_screen.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:faber_ticket_ptsl/utils/constants.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import 'custom_screen.dart';
 
 class SongScreen extends StatefulWidget {
   @override
@@ -93,7 +93,7 @@ class _SongScreenState extends State<SongScreen> {
               onPressed: () {
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (context) => CustomScreen()),
+                  MaterialPageRoute(builder: (context) => PhotoScreen()),
                 );
               },
             ),
