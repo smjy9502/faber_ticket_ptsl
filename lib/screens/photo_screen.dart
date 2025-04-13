@@ -1,5 +1,6 @@
 import 'dart:html' as html;
 import 'package:faber_ticket_ptsl/screens/main_screen.dart';
+import 'package:faber_ticket_ptsl/screens/song_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
@@ -141,9 +142,39 @@ class _PhotoScreenState extends State<PhotoScreen> {
                     ),
                   ),
                 ),
-                ElevatedButton(
-                  onPressed: uploadImages,
-                  child: Text('Upload'),
+                Padding(
+                  padding: EdgeInsets.only(bottom: 20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ElevatedButton(
+                        onPressed: uploadImages,
+                        style: ElevatedButton.styleFrom(
+                          minimumSize: Size(120, 50),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(25),
+                          ),
+                          backgroundColor: Colors.deepPurpleAccent,
+                        ),
+                        child: Text('Upload'),
+                      ),
+                      SizedBox(width: 20), // ✅ 버튼 간격 조정
+                      ElevatedButton(
+                        onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => SongScreen()),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          minimumSize: Size(120, 50),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(25),
+                          ),
+                          backgroundColor: Colors.blueAccent,
+                        ),
+                        child: Text('Setlist'),
+                      ),
+                    ],
+                  ),
                 ),
                 SizedBox(height: 20),
               ],
